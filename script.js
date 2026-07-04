@@ -153,14 +153,29 @@ burger.addEventListener('click', () => {
   navLinks.style.display = navLinks.classList.contains('open-mobile') ? 'flex' : 'none';
 });
 
-/* ============ SCROLL REVEAL ============ */
+/* ============ SCROLL MORPH / REVEAL ============ */
+// Note: unlike a one-time reveal, this toggles the 'in' class both ways,
+// so elements morph out when scrolled away and morph back in when re-entering view.
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      observer.unobserve(entry.target);
-    }
+    entry.target.classList.toggle('in', entry.isIntersecting);
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// Apply a staggered index to groups of elements so they animate in a wave
+function initReveal(selector, groupSize = 8) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.setProperty('--i', i % groupSize);
+    observer.observe(el);
+  });
+}
+
+// Cards already have the .reveal class from render above, just wire up stagger + observe
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.setProperty('--i', i % 8);
+  observer.observe(el);
+});
+
+// NOTE: .tag and .timeline-card intentionally do NOT get the morph/reveal effect —
+// they keep their original static hand-drawn tilt (rotate -1deg/1deg) instead.
