@@ -2,6 +2,15 @@
 
 const projects = [
   
+   {
+    title: "TaraNV - Centralized Location and Accommodation",
+    desc: "TaraNV is a web application that provides a centralized platform for users to find and book accommodations in various locations. It offers an intuitive interface for searching, filtering, and viewing available lodging options, complete with detailed descriptions, images, and user reviews. The application is designed to streamline the booking process, making it easy for travelers to plan their stays efficiently.",
+    img: "TaraNV.png",
+    tags: ["HTML", "JavaScript", "CSS", "PostgreSQL"],
+    link: "https://github.com/gigson04/TaraNv.git",
+    github: true
+  },
+
   {
     title: "TicTacToe - Interactive Game",
     desc: "TicTacToe is a classic two-player game where players take turns marking the spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. Built with HTML, CSS, and JavaScript, it features a clean and responsive design that works seamlessly across devices.",
@@ -29,15 +38,7 @@ const projects = [
     link: "https://github.com/gigson04/FLIPCLOCK.git",
     github: true
   },
-  {
-    title: "TaraNV - Centralized Location and Accommodation",
-    desc: "TaraNV is a web application that provides a centralized platform for users to find and book accommodations in various locations. It offers an intuitive interface for searching, filtering, and viewing available lodging options, complete with detailed descriptions, images, and user reviews. The application is designed to streamline the booking process, making it easy for travelers to plan their stays efficiently.",
-    img: "TaraNV.png",
-    tags: ["HTML", "JavaScript", "CSS", "PostgreSQL"],
-    link: "https://github.com/gigson04/TaraNv.git",
-    github: true
-  },
-
+ 
    {
     title: "Calendar App - Interactive Calendar",
     desc: "An interactive calendar application built with HTML, CSS, and JavaScript, featuring a clean and responsive design that works seamlessly across devices.",
