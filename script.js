@@ -177,5 +177,18 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   observer.observe(el);
 });
 
-// NOTE: .tag and .timeline-card intentionally do NOT get the morph/reveal effect —
-// they keep their original static hand-drawn tilt (rotate -1deg/1deg) instead.
+// Tags and timeline cards get the scroll animation too, but the animation's
+// end-state tilt matches their original hand-drawn rotation instead of flattening to 0deg.
+document.querySelectorAll('.tag').forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.setProperty('--i', i % 8);
+  el.style.setProperty('--tilt', i % 2 === 0 ? '-1deg' : '1deg');
+  observer.observe(el);
+});
+
+document.querySelectorAll('.timeline-card').forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.setProperty('--i', i % 2);
+  el.style.setProperty('--tilt', i === 1 ? '1deg' : '-1deg');
+  observer.observe(el);
+});

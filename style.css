@@ -557,8 +557,15 @@ ul{list-style:none;margin:0;padding:0;}
 }
 .reveal.in{
   opacity:1;
-  transform:translateY(0) scale(1) rotate(0deg);
+  transform:translateY(0) scale(1) rotate(var(--tilt, 0deg));
   filter: blur(0);
+}
+/* Higher-specificity overrides so timeline-card tilt & hover-lift always win, regardless of rule order */
+.timeline-card.reveal.in{
+  transform:translateY(0) scale(1) rotate(var(--tilt, 0deg));
+}
+.timeline-card.reveal.in:hover{
+  transform:rotate(0deg) translateY(-4px);
 }
 
 /* ---------- Responsive ---------- */
