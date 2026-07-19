@@ -10,6 +10,7 @@ const projects = [
     link: "https://github.com/gigson04/TaraNv.git",
     github: true
   },
+
   
   {
     title: "TicTacToe - Interactive Game",
