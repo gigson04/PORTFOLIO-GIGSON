@@ -10,7 +10,7 @@ const projects = [
     link: "https://github.com/gigson04/TaraNv.git",
     github: true
   },
-
+  
   {
     title: "TicTacToe - Interactive Game",
     desc: "TicTacToe is a classic two-player game where players take turns marking the spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. Built with HTML, CSS, and JavaScript, it features a clean and responsive design that works seamlessly across devices.",
